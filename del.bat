@@ -1,0 +1,14 @@
+del asrc\*.cpp
+del asrc\*.h
+del asrc\*.o
+del asrc\syzygy\*.cpp
+del asrc\syzygy\*.h
+del asrc\syzygy\*.o
+del asrc\Makefile
+del psrc\*.cpp
+del psrc\*.h
+del psrc\*.o
+del psrc\syzygy\*.cpp
+del psrc\syzygy\*.h
+del psrc\syzygy\*.o
+del psrc\Makefile

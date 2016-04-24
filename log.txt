@@ -1,0 +1,1395 @@
+------------------------
+processing benchmark.cpp
+------------------------
+------------------------
+round 1
+------------------------
+	#include <fstream>
+	#include <iostream>
+	#include <istream>
+	#include <vector>
+	#include "misc.h"
+	#include "position.h"
+	#include "search.h"
+	#include "thread.h"
+	#include "uci.h"
+	#ifdef ATOMIC
+	#endif
+	#ifdef HORDE
+	#endif
+	#ifdef HOUSE
+	#endif
+	#ifdef KOTH
+	#endif
+	#ifdef RACE
+	#endif
+	#ifdef THREECHECK
+	#endif
+------------------------
+round 2
+------------------------
+	#include <fstream>
+	#include <iostream>
+	#include <istream>
+	#include <vector>
+	#include "misc.h"
+	#include "position.h"
+	#include "search.h"
+	#include "thread.h"
+	#include "uci.h"
+------------------------
+processing bitbase.cpp
+------------------------
+------------------------
+round 1
+------------------------
+	#include <algorithm>
+	#include <cassert>
+	#include <numeric>
+	#include <vector>
+	#include "bitboard.h"
+	#include "types.h"
+------------------------
+processing bitboard.cpp
+------------------------
+------------------------
+round 1
+------------------------
+	#include <algorithm>
+	#include "bitboard.h"
+	#include "misc.h"
+	#ifdef NO_BSF
+	#endif // ifdef NO_BSF
+------------------------
+processing bitboard.h
+------------------------
+------------------------
+round 1
+------------------------
+	#ifndef BITBOARD_H_INCLUDED
+	#define BITBOARD_H_INCLUDED
+	#include <string>
+	#include "types.h"
+	#ifndef USE_POPCNT
+	#elif defined(_MSC_VER) && defined(__INTEL_COMPILER)
+	#elif defined(_MSC_VER)
+	#else // Assumed gcc or compatible compiler
+	#endif
+	#if defined(__GNUC__)
+	#elif defined(_WIN64) && defined(_MSC_VER)
+	#else
+	#define NO_BSF // Fallback on software implementation for other cases
+	#endif
+	#endif // #ifndef BITBOARD_H_INCLUDED
+------------------------
+processing endgame.cpp
+------------------------
+------------------------
+round 1
+------------------------
+	#include <algorithm>
+	#include <cassert>
+	#include "bitboard.h"
+	#include "endgame.h"
+	#include "movegen.h"
+	#ifndef NDEBUG
+	#endif
+------------------------
+processing endgame.h
+------------------------
+------------------------
+round 1
+------------------------
+	#ifndef ENDGAME_H_INCLUDED
+	#define ENDGAME_H_INCLUDED
+	#include <map>
+	#include <memory>
+	#include <string>
+	#include <type_traits>
+	#include <utility>
+	#include "position.h"
+	#include "types.h"
+	#endif // #ifndef ENDGAME_H_INCLUDED
+------------------------
+processing evaluate.cpp
+------------------------
+------------------------
+round 1
+------------------------
+	#include <algorithm>
+	#include <cassert>
+	#include <cstring>   // For std::memset
+	#include <iomanip>
+	#include <sstream>
+	#include "bitboard.h"
+	#include "evaluate.h"
+	#include "material.h"
+	#include "pawns.h"
+	  #define V(v) Value(v)
+	  #define S(mg, eg) make_score(mg, eg)
+	#ifdef THREECHECK
+	#endif
+	  #undef S
+	  #undef V
+	#ifdef THREECHECK
+	#endif
+	#ifdef THREECHECK
+	#endif
+	#ifdef RACE
+	#endif
+	#ifdef RACE
+	#else
+	#endif
+	#ifdef RACE
+	#endif
+	#ifdef KOTH
+	#endif
+	#ifdef RACE
+	#endif
+	#ifdef RACE
+	#endif
+	#ifdef HORDE
+	#endif
+	#ifdef ATOMIC
+	#endif
+	#ifdef RACE
+	#else
+	#endif
+	#ifdef RACE
+	#endif
+	#ifdef RACE
+	#else
+	#endif
+	#ifdef RACE
+	#endif
+	#ifdef RACE
+	#endif
+	#ifdef RACE
+	#endif
+	#ifdef HORDE
+	#endif
+	#ifdef HORDE
+	#endif
+	#ifdef HORDE
+	#else
+	#endif
+	#ifdef HORDE
+	#endif
+	#ifdef THREECHECK
+	#endif
+	#ifdef HORDE
+	#endif
+	#ifdef KOTH
+	#endif
+	#ifdef RACE
+	#endif
+	#ifdef THREECHECK
+	#endif
+	#ifdef HORDE
+	#endif
+	#ifdef ATOMIC
+	#endif
+	#ifdef KOTH
+	#endif
+	#ifdef RACE
+	#endif
+	#ifdef THREECHECK
+	#endif
+	#ifdef HORDE
+	#endif
+	#ifdef ATOMIC
+	#endif
+	#ifdef HORDE
+	#endif
+	#ifdef HORDE
+	#endif
+------------------------
+round 2
+------------------------
+	#include <algorithm>
+	#include <cassert>
+	#include <cstring>   // For std::memset
+	#include <iomanip>
+	#include <sstream>
+	#include "bitboard.h"
+	#include "evaluate.h"
+	#include "material.h"
+	#include "pawns.h"
+	  #define V(v) Value(v)
+	  #define S(mg, eg) make_score(mg, eg)
+	  #undef S
+	  #undef V
+------------------------
+processing evaluate.h
+------------------------
+------------------------
+round 1
+------------------------
+	#ifndef EVALUATE_H_INCLUDED
+	#define EVALUATE_H_INCLUDED
+	#include <string>
+	#include "types.h"
+	#endif // #ifndef EVALUATE_H_INCLUDED
+------------------------
+processing main.cpp
+------------------------
+------------------------
+round 1
+------------------------
+	#include <iostream>
+	#include "bitboard.h"
+	#include "evaluate.h"
+	#include "position.h"
+	#include "search.h"
+	#include "thread.h"
+	#include "tt.h"
+	#include "uci.h"
+	#include "syzygy/tbprobe.h"
+------------------------
+processing Makefile
+------------------------
+------------------------
+processing material.cpp
+------------------------
+------------------------
+round 1
+------------------------
+	#include <algorithm> // For std::min
+	#include <cassert>
+	#include <cstring>   // For std::memset
+	#include "material.h"
+	#include "thread.h"
+	#ifdef KOTH
+	#endif
+	#ifdef RACE
+	#endif
+	#ifdef THREECHECK
+	#endif
+	#ifdef HORDE
+	#endif
+	#ifdef ATOMIC
+	#endif
+	#ifdef KOTH
+	#endif
+	#ifdef RACE
+	#endif
+	#ifdef THREECHECK
+	#endif
+	#ifdef HORDE
+	#endif
+	#ifdef ATOMIC
+	#endif
+------------------------
+round 2
+------------------------
+	#include <algorithm> // For std::min
+	#include <cassert>
+	#include <cstring>   // For std::memset
+	#include "material.h"
+	#include "thread.h"
+------------------------
+processing material.h
+------------------------
+------------------------
+round 1
+------------------------
+	#ifndef MATERIAL_H_INCLUDED
+	#define MATERIAL_H_INCLUDED
+	#include "endgame.h"
+	#include "misc.h"
+	#include "position.h"
+	#include "types.h"
+	#ifdef KOTH
+	#endif
+	#ifdef RACE
+	#endif
+	#ifdef THREECHECK
+	#endif
+	#ifdef HORDE
+	#endif
+	#ifdef ATOMIC
+	#endif
+	#endif // #ifndef MATERIAL_H_INCLUDED
+------------------------
+round 2
+------------------------
+	#ifndef MATERIAL_H_INCLUDED
+	#define MATERIAL_H_INCLUDED
+	#include "endgame.h"
+	#include "misc.h"
+	#include "position.h"
+	#include "types.h"
+	#endif // #ifndef MATERIAL_H_INCLUDED
+------------------------
+processing misc.cpp
+------------------------
+------------------------
+round 1
+------------------------
+	#include <fstream>
+	#include <iomanip>
+	#include <iostream>
+	#include <sstream>
+	#include "misc.h"
+	#include "thread.h"
+	#ifdef NO_PREFETCH
+	#else
+	#  if defined(__INTEL_COMPILER)
+	#  endif
+	#  if defined(__INTEL_COMPILER) || defined(_MSC_VER)
+	#  else
+	#  endif
+	#endif
+------------------------
+processing misc.h
+------------------------
+------------------------
+round 1
+------------------------
+	#ifndef MISC_H_INCLUDED
+	#define MISC_H_INCLUDED
+	#include <cassert>
+	#include <chrono>
+	#include <ostream>
+	#include <string>
+	#include <vector>
+	#include "types.h"
+	#define sync_cout std::cout << IO_LOCK
+	#define sync_endl std::endl << IO_UNLOCK
+	#endif // #ifndef MISC_H_INCLUDED
+------------------------
+processing movegen.cpp
+------------------------
+------------------------
+round 1
+------------------------
+	#include <cassert>
+	#include "movegen.h"
+	#include "position.h"
+	#ifdef ATOMIC
+	#endif
+	#ifdef HORDE
+	#endif
+	#ifdef HORDE
+	#endif
+	#ifdef ATOMIC
+	#endif
+	#ifdef ATOMIC
+	#endif
+	#ifdef ATOMIC
+	#endif
+	#ifdef ATOMIC
+	#endif
+	#ifdef ATOMIC
+	#endif
+	#ifdef ATOMIC
+	#endif
+	#ifdef ATOMIC
+	#endif
+	#ifdef HORDE
+	#endif
+	#ifdef KOTH
+	#endif
+	#ifdef RACE
+	#endif
+	#ifdef THREECHECK
+	#endif
+	#ifdef RACE
+	#endif
+	#ifdef ATOMIC
+	#endif
+------------------------
+round 2
+------------------------
+	#include <cassert>
+	#include "movegen.h"
+	#include "position.h"
+------------------------
+processing movegen.h
+------------------------
+------------------------
+round 1
+------------------------
+	#ifndef MOVEGEN_H_INCLUDED
+	#define MOVEGEN_H_INCLUDED
+	#include "types.h"
+	#endif // #ifndef MOVEGEN_H_INCLUDED
+------------------------
+processing movepick.cpp
+------------------------
+------------------------
+round 1
+------------------------
+	#include <cassert>
+	#include "movepick.h"
+	#include "thread.h"
+------------------------
+processing movepick.h
+------------------------
+------------------------
+round 1
+------------------------
+	#ifndef MOVEPICK_H_INCLUDED
+	#define MOVEPICK_H_INCLUDED
+	#include <algorithm> // For std::max
+	#include <cstring>   // For std::memset
+	#include "movegen.h"
+	#include "position.h"
+	#include "search.h"
+	#include "types.h"
+	#endif // #ifndef MOVEPICK_H_INCLUDED
+------------------------
+processing pawns.cpp
+------------------------
+------------------------
+round 1
+------------------------
+	#include <algorithm>
+	#include <cassert>
+	#include "bitboard.h"
+	#include "pawns.h"
+	#include "position.h"
+	#include "thread.h"
+	  #define V Value
+	  #define S(mg, eg) make_score(mg, eg)
+	  #undef S
+	  #undef V
+	#ifdef THREECHECK
+	#endif
+	#ifdef THREECHECK
+	#else
+	#endif
+------------------------
+round 2
+------------------------
+	#include <algorithm>
+	#include <cassert>
+	#include "bitboard.h"
+	#include "pawns.h"
+	#include "position.h"
+	#include "thread.h"
+	  #define V Value
+	  #define S(mg, eg) make_score(mg, eg)
+	  #undef S
+	  #undef V
+------------------------
+processing pawns.h
+------------------------
+------------------------
+round 1
+------------------------
+	#ifndef PAWNS_H_INCLUDED
+	#define PAWNS_H_INCLUDED
+	#include "misc.h"
+	#include "position.h"
+	#include "types.h"
+	#endif // #ifndef PAWNS_H_INCLUDED
+------------------------
+processing position.cpp
+------------------------
+------------------------
+round 1
+------------------------
+	#include <algorithm>
+	#include <cassert>
+	#include <cstring>   // For std::memset, std::memcmp
+	#include <iomanip>
+	#include <sstream>
+	#include "bitboard.h"
+	#include "misc.h"
+	#include "movegen.h"
+	#include "position.h"
+	#include "thread.h"
+	#include "tt.h"
+	#include "uci.h"
+	#ifdef THREECHECK
+	#endif
+	#ifdef HORDE
+	#endif
+	#ifdef ATOMIC
+	#endif
+	#ifdef THREECHECK
+	#endif
+	#ifdef THREECHECK
+	#endif
+	#ifdef RACE
+	#endif
+	#ifdef HORDE
+	#endif
+	#ifdef ATOMIC
+	#endif
+	#ifdef THREECHECK
+	#endif
+	#ifdef HOUSE
+	#endif
+	#ifdef THREECHECK
+	#endif
+	#ifdef HORDE
+	#endif
+	#ifdef ATOMIC
+	#endif
+	#ifdef HORDE
+	#endif
+	#ifdef HORDE
+	#else
+	#endif
+	#ifdef RACE
+	#endif
+	#ifdef HORDE
+	#endif
+	#ifdef ATOMIC
+	#endif
+	#ifdef ATOMIC
+	#endif
+	#ifdef KOTH
+	#endif
+	#ifdef RACE
+	#endif
+	#ifdef HORDE
+	#endif
+	#ifdef ATOMIC
+	#endif
+	#ifdef ATOMIC
+	#endif
+	#ifdef HORDE
+	#endif
+	#ifdef ATOMIC
+	#endif
+	#ifdef ATOMIC
+	#endif
+	#ifdef ATOMIC
+	#endif
+	#ifdef THREECHECK
+	#endif
+	#ifdef ATOMIC
+	#endif
+	#ifdef HORDE
+	#endif
+	#ifdef ATOMIC
+	#endif
+	#ifdef ATOMIC
+	#endif
+	#ifdef ATOMIC
+	#endif
+	#ifdef ATOMIC
+	#endif
+	#ifdef RACE
+	#endif
+	#ifdef ATOMIC
+	#endif
+	#ifdef ATOMIC
+	#endif
+	#ifdef ATOMIC
+	#endif
+	#ifdef ATOMIC
+	#endif
+	#ifdef ATOMIC
+	#endif
+	#ifdef ATOMIC
+	#endif
+	#ifdef HORDE
+	#else
+	#endif
+	#ifdef HORDE
+	#else
+	#endif
+	#ifdef HORDE
+	#ifdef ATOMIC
+	#else
+	#endif
+	#else
+	#ifdef ATOMIC
+	#else
+	#endif
+	#endif
+	#ifdef ATOMIC
+	#else
+	#endif
+	#ifdef HORDE
+	#endif
+	#ifdef HORDE
+	#endif
+	#ifdef ATOMIC
+	#endif
+------------------------
+round 2
+------------------------
+	#include <algorithm>
+	#include <cassert>
+	#include <cstring>   // For std::memset, std::memcmp
+	#include <iomanip>
+	#include <sstream>
+	#include "bitboard.h"
+	#include "misc.h"
+	#include "movegen.h"
+	#include "position.h"
+	#include "thread.h"
+	#include "tt.h"
+	#include "uci.h"
+	#ifdef ATOMIC
+	#else
+	#endif
+------------------------
+round 3
+------------------------
+	#include <algorithm>
+	#include <cassert>
+	#include <cstring>   // For std::memset, std::memcmp
+	#include <iomanip>
+	#include <sstream>
+	#include "bitboard.h"
+	#include "misc.h"
+	#include "movegen.h"
+	#include "position.h"
+	#include "thread.h"
+	#include "tt.h"
+	#include "uci.h"
+------------------------
+processing position.h
+------------------------
+------------------------
+round 1
+------------------------
+	#ifndef POSITION_H_INCLUDED
+	#define POSITION_H_INCLUDED
+	#include <cassert>
+	#include <cstddef>  // For offsetof()
+	#include <deque>
+	#include <memory>   // For std::unique_ptr
+	#include <string>
+	#include <vector>
+	#include "bitboard.h"
+	#include "types.h"
+	#define STANDARD_VARIANT 0
+	#define CHESS960_VARIANT 1 << 1
+	#define ATOMIC_VARIANT 1 << 2
+	#define HORDE_VARIANT 1 << 3
+	#define HOUSE_VARIANT 1 << 4
+	#define KOTH_VARIANT 1 << 5
+	#define RACE_VARIANT 1 << 6
+	#define THREECHECK_VARIANT 1 << 7
+	#ifdef THREECHECK
+	#endif
+	#ifdef ATOMIC
+	#endif
+	#ifdef ATOMIC
+	#endif
+	#ifdef HORDE
+	#endif
+	#ifdef HOUSE
+	#endif
+	#ifdef KOTH
+	#endif
+	#ifdef RACE
+	#endif
+	#ifdef THREECHECK
+	#endif
+	#ifdef HORDE
+	#else
+	#endif
+	#ifdef HORDE
+	#endif
+	#ifdef ATOMIC
+	#endif
+	#ifdef THREECHECK
+	#endif
+	#ifdef RACE
+	#endif
+	#ifdef HORDE
+	#endif
+	#ifdef RACE
+	#endif
+	#ifdef ATOMIC
+	#endif
+	#ifdef HORDE
+	#endif
+	#ifdef HOUSE
+	#endif
+	#ifdef KOTH
+	#endif
+	#ifdef RACE
+	#endif
+	#ifdef RACE
+	#endif
+	#ifdef ATOMIC
+	#endif
+	#endif // #ifndef POSITION_H_INCLUDED
+------------------------
+round 2
+------------------------
+	#ifndef POSITION_H_INCLUDED
+	#define POSITION_H_INCLUDED
+	#include <cassert>
+	#include <cstddef>  // For offsetof()
+	#include <deque>
+	#include <memory>   // For std::unique_ptr
+	#include <string>
+	#include <vector>
+	#include "bitboard.h"
+	#include "types.h"
+	#define STANDARD_VARIANT 0
+	#define CHESS960_VARIANT 1 << 1
+	#define ATOMIC_VARIANT 1 << 2
+	#define HORDE_VARIANT 1 << 3
+	#define HOUSE_VARIANT 1 << 4
+	#define KOTH_VARIANT 1 << 5
+	#define RACE_VARIANT 1 << 6
+	#define THREECHECK_VARIANT 1 << 7
+	#endif // #ifndef POSITION_H_INCLUDED
+------------------------
+processing psqt.cpp
+------------------------
+------------------------
+round 1
+------------------------
+	#include <algorithm>
+	#include "types.h"
+	#define S(mg, eg) make_score(mg, eg)
+	#undef S
+------------------------
+processing search.cpp
+------------------------
+------------------------
+round 1
+------------------------
+	#include <algorithm>
+	#include <cassert>
+	#include <cmath>
+	#include <cstring>   // For std::memset
+	#include <iostream>
+	#include <sstream>
+	#include "evaluate.h"
+	#include "misc.h"
+	#include "movegen.h"
+	#include "movepick.h"
+	#include "search.h"
+	#include "timeman.h"
+	#include "thread.h"
+	#include "tt.h"
+	#include "uci.h"
+	#include "syzygy/tbprobe.h"
+	#ifdef KOTH
+	#endif
+	#ifdef RACE
+	#endif
+	#ifdef HORDE
+	#endif
+	#ifdef ATOMIC
+	#endif
+	#ifdef RACE
+	#endif
+	#ifdef THREECHECK
+	#endif
+	#ifdef KOTH
+	#endif
+	#ifdef RACE
+	#endif
+	#ifdef THREECHECK
+	#endif
+	#ifdef HORDE
+	#endif
+	#ifdef ATOMIC
+	#endif
+	#ifdef KOTH
+	#endif
+	#ifdef RACE
+	#endif
+	#ifdef THREECHECK
+	#endif
+	#ifdef HORDE
+	#endif
+	#ifdef ATOMIC
+	#endif
+	#ifdef RACE
+	#endif
+	#ifdef THREECHECK
+	#endif
+	#ifdef RACE
+	#ifdef THREECHECK
+	#else
+	#endif
+	#else
+	#ifdef THREECHECK
+	#else
+	#endif
+	#endif
+	#ifdef RACE
+	#ifdef THREECHECK
+	#else
+	#endif
+	#else
+	#ifdef THREECHECK
+	#else
+	#endif
+	#endif
+	#ifdef RACE
+	#endif
+	#ifdef ATOMIC
+	#endif
+	#ifdef RACE
+	#ifdef THREECHECK
+	#else
+	#endif
+	#else
+	#ifdef THREECHECK
+	#else
+	#endif
+	#endif
+	#ifdef RACE
+	#ifdef THREECHECK
+	#else
+	#endif
+	#else
+	#ifdef THREECHECK
+	#else
+	#endif
+	#endif
+	#ifdef RACE
+	#ifdef THREECHECK
+	#else
+	#endif
+	#else
+	#ifdef THREECHECK
+	#else
+	#endif
+	#endif
+	#ifdef RACE
+	#ifdef THREECHECK
+	#else
+	#endif
+	#else
+	#ifdef THREECHECK
+	#else
+	#endif
+	#endif
+	#ifdef RACE
+	#endif
+	#ifdef HORDE
+	#endif
+	#ifdef ATOMIC
+	#else
+	#endif
+	#ifdef KOTH
+	#endif
+	#ifdef RACE
+	#endif
+	#ifdef THREECHECK
+	#endif
+	#ifdef HORDE
+	#endif
+	#ifdef ATOMIC
+	#endif
+	#ifdef RACE
+	#endif
+	#ifdef ATOMIC
+	#endif
+------------------------
+round 2
+------------------------
+	#include <algorithm>
+	#include <cassert>
+	#include <cmath>
+	#include <cstring>   // For std::memset
+	#include <iostream>
+	#include <sstream>
+	#include "evaluate.h"
+	#include "misc.h"
+	#include "movegen.h"
+	#include "movepick.h"
+	#include "search.h"
+	#include "timeman.h"
+	#include "thread.h"
+	#include "tt.h"
+	#include "uci.h"
+	#include "syzygy/tbprobe.h"
+	#ifdef THREECHECK
+	#else
+	#endif
+	#ifdef THREECHECK
+	#else
+	#endif
+	#ifdef THREECHECK
+	#else
+	#endif
+	#ifdef THREECHECK
+	#else
+	#endif
+	#ifdef THREECHECK
+	#else
+	#endif
+	#ifdef THREECHECK
+	#else
+	#endif
+------------------------
+round 3
+------------------------
+	#include <algorithm>
+	#include <cassert>
+	#include <cmath>
+	#include <cstring>   // For std::memset
+	#include <iostream>
+	#include <sstream>
+	#include "evaluate.h"
+	#include "misc.h"
+	#include "movegen.h"
+	#include "movepick.h"
+	#include "search.h"
+	#include "timeman.h"
+	#include "thread.h"
+	#include "tt.h"
+	#include "uci.h"
+	#include "syzygy/tbprobe.h"
+------------------------
+processing search.h
+------------------------
+------------------------
+round 1
+------------------------
+	#ifndef SEARCH_H_INCLUDED
+	#define SEARCH_H_INCLUDED
+	#include <atomic>
+	#include <vector>
+	#include "misc.h"
+	#include "position.h"
+	#include "types.h"
+	#endif // #ifndef SEARCH_H_INCLUDED
+------------------------
+processing thread.cpp
+------------------------
+------------------------
+round 1
+------------------------
+	#include <algorithm> // For std::count
+	#include <cassert>
+	#include "movegen.h"
+	#include "search.h"
+	#include "thread.h"
+	#include "uci.h"
+------------------------
+processing thread.h
+------------------------
+------------------------
+round 1
+------------------------
+	#ifndef THREAD_H_INCLUDED
+	#define THREAD_H_INCLUDED
+	#include <atomic>
+	#include <bitset>
+	#include <condition_variable>
+	#include <mutex>
+	#include <thread>
+	#include <vector>
+	#include "material.h"
+	#include "movepick.h"
+	#include "pawns.h"
+	#include "position.h"
+	#include "search.h"
+	#include "thread_win32.h"
+	#endif // #ifndef THREAD_H_INCLUDED
+------------------------
+processing thread_win32.h
+------------------------
+------------------------
+round 1
+------------------------
+	#ifndef THREAD_WIN32_H_INCLUDED
+	#define THREAD_WIN32_H_INCLUDED
+	#include <condition_variable>
+	#include <mutex>
+	#if defined(_WIN32) && !defined(_MSC_VER)
+	#ifndef NOMINMAX
+	#  define NOMINMAX // Disable macros min() and max()
+	#endif
+	#define WIN32_LEAN_AND_MEAN
+	#include <windows.h>
+	#undef WIN32_LEAN_AND_MEAN
+	#undef NOMINMAX
+	#else // Default case: use STL classes
+	#endif
+	#endif // #ifndef THREAD_WIN32_H_INCLUDED
+------------------------
+processing timeman.cpp
+------------------------
+------------------------
+round 1
+------------------------
+	#include <algorithm>
+	#include <cfloat>
+	#include <cmath>
+	#include "search.h"
+	#include "timeman.h"
+	#include "uci.h"
+------------------------
+processing timeman.h
+------------------------
+------------------------
+round 1
+------------------------
+	#ifndef TIMEMAN_H_INCLUDED
+	#define TIMEMAN_H_INCLUDED
+	#include "misc.h"
+	#include "search.h"
+	#include "thread.h"
+	#endif // #ifndef TIMEMAN_H_INCLUDED
+------------------------
+processing tt.cpp
+------------------------
+------------------------
+round 1
+------------------------
+	#include <cstring>   // For std::memset
+	#include <iostream>
+	#include "bitboard.h"
+	#include "tt.h"
+------------------------
+processing tt.h
+------------------------
+------------------------
+round 1
+------------------------
+	#ifndef TT_H_INCLUDED
+	#define TT_H_INCLUDED
+	#include "misc.h"
+	#include "types.h"
+	#endif // #ifndef TT_H_INCLUDED
+------------------------
+processing types.h
+------------------------
+------------------------
+round 1
+------------------------
+	#ifndef TYPES_H_INCLUDED
+	#define TYPES_H_INCLUDED
+	#include <cassert>
+	#include <cctype>
+	#include <climits>
+	#include <cstdint>
+	#include <cstdlib>
+	#if defined(_MSC_VER)
+	#pragma warning(disable: 4127) // Conditional expression is constant
+	#pragma warning(disable: 4146) // Unary minus operator applied to unsigned type
+	#pragma warning(disable: 4800) // Forcing value to bool 'true' or 'false'
+	#endif
+	#if defined(_WIN64) && defined(_MSC_VER) // No Makefile used
+	#  include <intrin.h> // MSVC popcnt and bsfq instrinsics
+	#  define IS_64BIT
+	#endif
+	#if defined(USE_POPCNT) && defined(__INTEL_COMPILER) && defined(_MSC_VER)
+	#  include <nmmintrin.h> // Intel header for _mm_popcnt_u64() intrinsic
+	#endif
+	#if !defined(NO_PREFETCH) && (defined(__INTEL_COMPILER) || defined(_MSC_VER))
+	#  include <xmmintrin.h> // Intel and Microsoft header for _mm_prefetch()
+	#endif
+	#if defined(USE_PEXT)
+	#  include <immintrin.h> // Header for _pext_u64() intrinsic
+	#  define pext(b, m) _pext_u64(b, m)
+	#else
+	#  define pext(b, m) (0)
+	#endif
+	#ifdef USE_POPCNT
+	#else
+	#endif
+	#ifdef USE_PEXT
+	#else
+	#endif
+	#ifdef IS_64BIT
+	#else
+	#endif
+	#ifdef THREECHECK
+	#endif
+	#define ENABLE_BASE_OPERATORS_ON(T)                             \
+	#define ENABLE_FULL_OPERATORS_ON(T)                             \
+	#ifdef THREECHECK
+	#endif
+	#undef ENABLE_FULL_OPERATORS_ON
+	#undef ENABLE_BASE_OPERATORS_ON
+	#endif // #ifndef TYPES_H_INCLUDED
+------------------------
+round 2
+------------------------
+	#ifndef TYPES_H_INCLUDED
+	#define TYPES_H_INCLUDED
+	#include <cassert>
+	#include <cctype>
+	#include <climits>
+	#include <cstdint>
+	#include <cstdlib>
+	#if defined(_MSC_VER)
+	#pragma warning(disable: 4127) // Conditional expression is constant
+	#pragma warning(disable: 4146) // Unary minus operator applied to unsigned type
+	#pragma warning(disable: 4800) // Forcing value to bool 'true' or 'false'
+	#endif
+	#if defined(_WIN64) && defined(_MSC_VER) // No Makefile used
+	#  include <intrin.h> // MSVC popcnt and bsfq instrinsics
+	#  define IS_64BIT
+	#endif
+	#if defined(USE_POPCNT) && defined(__INTEL_COMPILER) && defined(_MSC_VER)
+	#  include <nmmintrin.h> // Intel header for _mm_popcnt_u64() intrinsic
+	#endif
+	#if !defined(NO_PREFETCH) && (defined(__INTEL_COMPILER) || defined(_MSC_VER))
+	#  include <xmmintrin.h> // Intel and Microsoft header for _mm_prefetch()
+	#endif
+	#if defined(USE_PEXT)
+	#  include <immintrin.h> // Header for _pext_u64() intrinsic
+	#  define pext(b, m) _pext_u64(b, m)
+	#else
+	#  define pext(b, m) (0)
+	#endif
+	#ifdef USE_POPCNT
+	#else
+	#endif
+	#ifdef USE_PEXT
+	#else
+	#endif
+	#ifdef IS_64BIT
+	#else
+	#endif
+	#define ENABLE_BASE_OPERATORS_ON(T)                             \
+	#define ENABLE_FULL_OPERATORS_ON(T)                             \
+	#undef ENABLE_FULL_OPERATORS_ON
+	#undef ENABLE_BASE_OPERATORS_ON
+	#endif // #ifndef TYPES_H_INCLUDED
+------------------------
+processing uci.cpp
+------------------------
+------------------------
+round 1
+------------------------
+	#include <iostream>
+	#include <sstream>
+	#include <string>
+	#include "evaluate.h"
+	#include "movegen.h"
+	#include "position.h"
+	#include "search.h"
+	#include "thread.h"
+	#include "timeman.h"
+	#include "uci.h"
+	#ifdef HORDE
+	#endif
+	#ifdef ATOMIC
+	#endif
+	#ifdef HORDE
+	#endif
+	#ifdef HOUSE
+	#endif
+	#ifdef KOTH
+	#endif
+	#ifdef RACE
+	#endif
+	#ifdef THREECHECK
+	#endif
+	#ifdef HORDE
+	#else
+	#endif
+------------------------
+round 2
+------------------------
+	#include <iostream>
+	#include <sstream>
+	#include <string>
+	#include "evaluate.h"
+	#include "movegen.h"
+	#include "position.h"
+	#include "search.h"
+	#include "thread.h"
+	#include "timeman.h"
+	#include "uci.h"
+------------------------
+processing uci.h
+------------------------
+------------------------
+round 1
+------------------------
+	#ifndef UCI_H_INCLUDED
+	#define UCI_H_INCLUDED
+	#include <map>
+	#include <string>
+	#include "types.h"
+	#endif // #ifndef UCI_H_INCLUDED
+------------------------
+processing ucioption.cpp
+------------------------
+------------------------
+round 1
+------------------------
+	#include <algorithm>
+	#include <cassert>
+	#include <ostream>
+	#include "misc.h"
+	#include "search.h"
+	#include "thread.h"
+	#include "tt.h"
+	#include "uci.h"
+	#include "syzygy/tbprobe.h"
+	#ifdef ATOMIC
+	#endif
+	#ifdef HORDE
+	#endif
+	#ifdef HOUSE
+	#endif
+	#ifdef KOTH
+	#endif
+	#ifdef RACE
+	#endif
+	#ifdef THREECHECK
+	#endif
+------------------------
+round 2
+------------------------
+	#include <algorithm>
+	#include <cassert>
+	#include <ostream>
+	#include "misc.h"
+	#include "search.h"
+	#include "thread.h"
+	#include "tt.h"
+	#include "uci.h"
+	#include "syzygy/tbprobe.h"
+------------------------
+processing tbcore.cpp
+------------------------
+------------------------
+round 1
+------------------------
+	#include <stdio.h>
+	#include <stdint.h>
+	#include <stdlib.h>
+	#include <string.h>
+	#include <sys/stat.h>
+	#include <fcntl.h>
+	#ifndef _WIN32
+	#include <unistd.h>
+	#include <sys/mman.h>
+	#endif
+	#include "tbcore.h"
+	#define TBMAX_PIECE 254
+	#define TBMAX_PAWN 256
+	#define HSHMAX 5
+	#define Swap(a,b) {int tmp=a;a=b;b=tmp;}
+	#define TB_PAWN 1
+	#define TB_KNIGHT 2
+	#define TB_BISHOP 3
+	#define TB_ROOK 4
+	#define TB_QUEEN 5
+	#define TB_KING 6
+	#define TB_WPAWN TB_PAWN
+	#define TB_BPAWN (TB_PAWN | 8)
+	#define DTZ_ENTRIES 64
+	#ifndef _WIN32
+	#else
+	#endif
+	#ifndef _WIN32
+	#else
+	#endif
+	#ifndef _WIN32
+	#else
+	#endif
+	#ifndef _WIN32
+	#else
+	#endif
+------------------------
+processing tbcore.h
+------------------------
+------------------------
+round 1
+------------------------
+	#ifndef TBCORE_H
+	#define TBCORE_H
+	#ifndef _WIN32
+	#include <pthread.h>
+	#define SEP_CHAR ':'
+	#define FD int
+	#define FD_ERR -1
+	#else
+	#include <windows.h>
+	#define SEP_CHAR ';'
+	#define FD HANDLE
+	#define FD_ERR INVALID_HANDLE_VALUE
+	#endif
+	#ifndef _WIN32
+	#define LOCK_T pthread_mutex_t
+	#define LOCK_INIT(x) pthread_mutex_init(&(x), NULL)
+	#define LOCK(x) pthread_mutex_lock(&(x))
+	#define UNLOCK(x) pthread_mutex_unlock(&(x))
+	#else
+	#define LOCK_T HANDLE
+	#define LOCK_INIT(x) do { x = CreateMutex(NULL, FALSE, NULL); } while (0)
+	#define LOCK(x) WaitForSingleObject(x, INFINITE)
+	#define UNLOCK(x) ReleaseMutex(x)
+	#endif
+	#ifndef _MSC_VER
+	#define BSWAP32(v) __builtin_bswap32(v)
+	#define BSWAP64(v) __builtin_bswap64(v)
+	#else
+	#define BSWAP32(v) _byteswap_ulong(v)
+	#define BSWAP64(v) _byteswap_uint64(v)
+	#endif
+	#define WDLSUFFIX ".rtbw"
+	#define DTZSUFFIX ".rtbz"
+	#define WDLDIR "RTBWDIR"
+	#define DTZDIR "RTBZDIR"
+	#define TBPIECES 6
+	#define TBHASHBITS 10
+	#ifndef _WIN32
+	#endif
+	#endif
+------------------------
+processing tbprobe.cpp
+------------------------
+------------------------
+round 1
+------------------------
+	#define NOMINMAX
+	#include <algorithm>
+	#include "../position.h"
+	#include "../movegen.h"
+	#include "../bitboard.h"
+	#include "../search.h"
+	#include "tbprobe.h"
+	#include "tbcore.h"
+	#include "tbcore.cpp"
+	#ifdef _MSC_VER
+	#else
+	#endif
+	#ifdef KOTH
+	#endif
+	#ifdef THREECHECK
+	#endif
+	#ifdef HORDE
+	#endif
+	#ifdef ATOMIC
+	#endif
+	#ifdef KOTH
+	#endif
+	#ifdef THREECHECK
+	#endif
+	#ifdef HORDE
+	#endif
+	#ifdef ATOMIC
+	#endif
+------------------------
+round 2
+------------------------
+	#define NOMINMAX
+	#include <algorithm>
+	#include "../position.h"
+	#include "../movegen.h"
+	#include "../bitboard.h"
+	#include "../search.h"
+	#include "tbprobe.h"
+	#include "tbcore.h"
+	#include "tbcore.cpp"
+	#ifdef _MSC_VER
+	#else
+	#endif
+------------------------
+processing tbprobe.h
+------------------------
+------------------------
+round 1
+------------------------
+	#ifndef TBPROBE_H
+	#define TBPROBE_H
+	#include "../search.h"
+	#endif
