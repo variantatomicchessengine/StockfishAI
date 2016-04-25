@@ -24,17 +24,27 @@ sub processdir
 			
 			my $pcontent=applypatches($dir,$content);
 
-			if(((-e "$outpath\\$dir")&&(!$overwrite))&&1)
+			if(-e "$outpath\\$dir")
 			{
-				print "up to date\n";
+				open(OLD,"$outpath\\$dir");
+				my $old=join("",<OLD>);
+				if($old eq $pcontent)
+				{
+					$overwrite=0;
+				}
 			}
-			else
+
+			if($overwrite)
 			{
 				print "applying patch\n";
 
 				open(OUTF,">$outpath\\$dir");
 				print OUTF $pcontent;
 				close(OUTF);
+			}
+			else
+			{
+				print "up to date\n";
 			}
 		}
 	}
@@ -78,6 +88,53 @@ sub applypatches
   		$content=~s/QueenValueEg\s*=\s*[0-9]+/QueenValueEg = 1600/;
 
   		$overwrite=1;
+	}
+
+	if($dir eq "timeman.h")
+	{
+
+		if($content=~/(void init\(([^\)]+)\);)/)
+		{
+			my $func=$1;
+			my $param=$2;
+
+			my $repl=<<EOT;
+$func
+void init_old($param);
+EOT
+			$content=~s/\Q$func\E/$repl/;
+		}
+
+		$overwrite=1;
+
+	}
+
+	if($dir eq "timeman.cpp")
+	{
+		if($content=~/(void TimeManagement::init\(([^\)]+)\))/)
+		{
+			my $func=$1;
+			my $param=$2;
+
+			my $repl=<<EOT;
+$func
+{
+	TimeManagement::init_old(limits,us,ply);
+	if(ply<2)
+	{
+		optimumTime=limits.time[us]/10;
+		if(optimumTime<12000) optimumTime=12000;
+		if((optimumTime*3)>limits.time[us]) optimumTime=limits.time[us]/3;
+		if(optimumTime>45000) optimumTime=45000;
+		maximumTime=optimumTime+2000;
+	}
+}
+void TimeManagement::init_old($param)
+EOT
+			$content=~s/\Q$func\E/$repl/;
+		}
+
+		$overwrite=1;
 	}
 
 	return $content;

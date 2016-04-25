@@ -83,6 +83,19 @@ namespace {
 
 void TimeManagement::init(Search::LimitsType& limits, Color us, int ply)
 {
+	TimeManagement::init_old(limits,us,ply);
+	if(ply<2)
+	{
+		optimumTime=limits.time[us]/10;
+		if(optimumTime<12000) optimumTime=12000;
+		if((optimumTime*3)>limits.time[us]) optimumTime=limits.time[us]/3;
+		if(optimumTime>45000) optimumTime=45000;
+		maximumTime=optimumTime+2000;
+	}
+}
+void TimeManagement::init_old(Search::LimitsType& limits, Color us, int ply)
+
+{
   int minThinkingTime = Options["Minimum Thinking Time"];
   int moveOverhead    = Options["Move Overhead"];
   int slowMover       = Options["Slow Mover"];
